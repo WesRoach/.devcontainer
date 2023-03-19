@@ -7,12 +7,12 @@
     ```bash
     tree -a -L 1 .
     .
-    ├── .devcontainer
+    ├── .devcontainer # Top level directory in VSCode's File Explorer (Cmd+Shift+E)
     ├── projectA
     └── projectB
     ```
 
-    After building, the `.devcontainer` will contain `projectA` & `projectB`.
+    The running container will have access to `.devcontainer`, `projectA` & `projectB` via a bind mount.
 2. Install VSCode extension `Dev Containers`.
 2. Reopen in Container using the VSCode Command Pallete (`Cmd+Shift+P` or `Ctrl+Shift+P`):
     - `Dev Containers: Reopen in Container`
@@ -65,7 +65,7 @@ The error from the git client will be resolved if you add the certs from the rem
 
 ```bash
 # Pull cert from Github
-openssl s_client -showcerts -servername github.com -connect github.com:443 </dev/null 2>/dev/null | sed -e '/BEGIN\ CERTIFICATE/./END\ CERTIFICATE/ p' > github-com.pem
+openssl s_client -showcerts -servername git.mycompany.com -connect git.mycompany.com:443 </dev/null 2>/dev/null | sed -n -e '/BEGIN\ CERTIFICATE/,/END\ CERTIFICATE/ p'  > git-mycompany-com.pem
 # Add to bundle
 cat github-com.pem | sudo tee -a /etc/ssl/certs/ca-certificates.crt
 ```
