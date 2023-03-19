@@ -25,7 +25,39 @@
     // "postCreateCommand": "uname -a",
 
     // Configure tool-specific properties.
-    // "customizations": {},
+    "customizations": {
+        "vscode": {
+            "settings": {
+                // Integrated Terminal
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "zsh"
+                    }
+                },
+                // Python
+                "python.defaultInterpreterPath": "/usr/bin/python3",
+                "python.linting.enabled": true,
+                "python.languageServer": "Pylance",
+                "python.formatting.provider": "black",
+                "python.testing.pytestEnabled": true,
+                "python.testing.pytestArgs": [
+                    "tests"
+                ]
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.black-formatter",
+                "ms-python.vscode-pylance",
+                "yzhang.markdown-all-in-one",
+                "hashicorp.terraform",
+                "njpwerner.autodocstring",
+                "redhat.vscode-yaml",
+                "bierner.markdown-mermaid",
+                "eamodio.gitlens"
+            ]
+        }
+    },
 
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     "remoteUser": "vscode"
