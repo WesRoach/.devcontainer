@@ -17,7 +17,7 @@ RUN apt-get update \
     default-jdk \
     mlocate \
     libgbm-dev \
-    # Python
+    # Python Development
     python3 \
     python3-distutils \
     build-essential \
@@ -104,7 +104,3 @@ RUN sudo chown -R vscode:vscode /workspaces
 # Install poetry-dynamic-versioning
 RUN source /home/vscode/.zshrc \
     && poetry self add "poetry-dynamic-versioning[plugin]"
-
-
-
-# Install venv for Python
