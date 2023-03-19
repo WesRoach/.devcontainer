@@ -21,9 +21,7 @@
 
 ### Missing CLI Utilities
 
-Solution:
-
-- Close and reopen a new terminal.
+- **Solution**: Close and reopen a new terminal.
 
 Terminal likely opened prior to setup completing.
 
