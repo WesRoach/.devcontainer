@@ -25,12 +25,12 @@
         "vscode": {
             "settings": {
                 // Integrated Terminal
-                "terminal.integrated.defaultProfile.linux": "zsh",
                 "terminal.integrated.profiles.linux": {
                     "zsh": {
-                        "path": "/usr/bin/zsh"
+                        "path": "/bin/zsh"
                     }
                 },
+                "terminal.integrated.defaultProfile.linux": "zsh",
                 // Python
                 "python.defaultInterpreterPath": "/usr/bin/python3",
                 "python.linting.enabled": true,

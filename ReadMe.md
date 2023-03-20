@@ -23,7 +23,10 @@
 
 - **Solution**: Close and reopen a new terminal.
 
-Terminal likely opened prior to setup completing.
+The terminal likely started using `bash` or `sh` rather than `zsh`. This is a known bug in VSCode `.devcontainer`.
+
+- Links
+    - [https://github.com/microsoft/vscode-remote-release/issues/6882](https://github.com/microsoft/vscode-remote-release/issues/6882)
 
 ***
 
