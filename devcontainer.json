@@ -6,7 +6,8 @@
         "dockerfile": "Dockerfile",
         "context": "..",
         "args": {
-            "VARIANT": "bullseye"
+            "VARIANT": "bullseye",
+            "GO_VERSION": "1.20.2"
         }
     },
     "mounts": [

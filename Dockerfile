@@ -1,6 +1,8 @@
 ARG VARIANT=bionic
 FROM mcr.microsoft.com/devcontainers/base:${VARIANT}
 
+ARG GO_VERSION=1.20.2
+
 # Update apt-get packages
 
 # Install nvm for node
@@ -104,3 +106,14 @@ RUN sudo chown -R vscode:vscode /workspaces
 # Install poetry-dynamic-versioning
 RUN source /home/vscode/.zshrc \
     && poetry self add "poetry-dynamic-versioning[plugin]"
+
+# Go
+RUN sudo curl -O -L https://golang.org/dl/go${GO_VERSION}.linux-$(dpkg --print-architecture).tar.gz \
+    && sudo tar -C /usr/local -xzf go${GO_VERSION}.linux-$(dpkg --print-architecture).tar.gz \
+    # ~/.zshrc
+    && echo "" >> /home/vscode/.zshrc \
+    && echo "# Go" >> /home/vscode/.zshrc \
+    && echo 'export PATH="$PATH:/usr/local/go/bin"' >> /home/vscode/.zshrc \
+    # Validate
+    && source /home/vscode/.zshrc \
+    && go version
