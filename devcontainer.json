@@ -51,7 +51,9 @@
                 "njpwerner.autodocstring",
                 "redhat.vscode-yaml",
                 "bierner.markdown-mermaid",
-                "eamodio.gitlens"
+                "eamodio.gitlens",
+                "github.copilot",
+                "github.copilot-chat"
             ]
         }
     },

@@ -117,3 +117,7 @@ RUN sudo curl -O -L https://golang.org/dl/go${GO_VERSION}.linux-$(dpkg --print-a
     # Validate
     && source /home/vscode/.zshrc \
     && go version
+
+# Pre-install Python versions
+RUN source /home/vscode/.zshrc \
+    pyenv install 3.7.10
