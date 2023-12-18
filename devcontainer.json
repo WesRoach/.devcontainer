@@ -53,7 +53,8 @@
                 "bierner.markdown-mermaid",
                 "eamodio.gitlens",
                 "github.copilot",
-                "github.copilot-chat"
+                "github.copilot-chat",
+                "charliermarsh.ruff",
             ]
         }
     },
