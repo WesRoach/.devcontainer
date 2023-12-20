@@ -118,6 +118,23 @@ RUN sudo curl -O -L https://golang.org/dl/go${GO_VERSION}.linux-$(dpkg --print-a
     && source /home/vscode/.zshrc \
     && go version
 
+# Install kubectl
+RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" \
+    && sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl \
+    # Validate
+    && source /home/vscode/.zshrc \
+    && kubectl version --client
+
+# Pulumi
+RUN curl -fsSL https://get.pulumi.com | sh \
+    # ~/.zshrc
+    && echo "" >> /home/vscode/.zshrc \
+    && echo "# Pulumi" >> /home/vscode/.zshrc \
+    && echo 'export PATH="$PATH:/home/vscode/.pulumi/bin"' >> /home/vscode/.zshrc \
+    # Validate
+    && source /home/vscode/.zshrc \
+    && pulumi version
+
 # Pre-install Python versions
 RUN source /home/vscode/.zshrc \
-    pyenv install 3.7.10
+    && pyenv install 3.7.10

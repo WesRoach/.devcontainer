@@ -13,7 +13,8 @@
     "mounts": [
         "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached",
-        "source=${localEnv:HOME}/.config,target=/home/vscode/.config,type=bind,consistency=cached"
+        "source=${localEnv:HOME}/.config,target=/home/vscode/.config,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.kube,target=/home/vscode/.kube,type=bind,consistency=cached"
     ],
     // Features to add to the dev container. More info: https://containers.dev/features.
     "features": {},
